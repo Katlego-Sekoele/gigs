@@ -16,19 +16,37 @@ function Hero() {
                     {heroText}
                 </Text>
                 <div className={classes.inline}>
-                    <Input bordered inline
-                           aria-label="search"
-                           placeholder="Search for service"
-                           clearable
-                           contentRightStyling={false}
-                           contentRight={
-                               <SearchButton>
-                                   <SearchIcon/>
-                               </SearchButton>
-                           }
-                            className={`${classes.paddingRight} ${classes.inlineChild}`}>
-                    </Input>
-                    <Button className={classes.inlineChild}>Post Service</Button>
+                    <Input
+                        clearable
+                        bordered
+                        contentLeft={
+                            <SearchIcon fill="var(--nextui-colors-accents6)" size={16} />
+                        }
+                        contentLeftStyling={false}
+                        css={{
+                            w: "auto",
+                            "@xsMax": {
+                                mw: "300px",
+                            },
+                            mr: "1em" ,
+                            mb: "1em" ,
+                            "& .nextui-input-content--left": {
+                                h: "100%",
+                                ml: "$4",
+                                dflex: "center",
+                            },
+                        }}
+                        placeholder="Search for service"
+                    />
+                    <Button auto className={classes.inlineChild}
+                            css={{
+                                w: "auto",
+                                mb: "1em",
+                                "@xsMax": {
+                                    mw: "300px",
+                                },
+                            }}
+                    >Post Service</Button>
                 </div>
             </div>
             <div className={classes.heroRight}>

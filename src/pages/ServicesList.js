@@ -1,12 +1,14 @@
 import classes from "@/styles/Home.module.css"
 import {Text} from "@nextui-org/react";
 import ServiceListCard from "@/pages/ServiceListCard";
+import {randomInt} from "next/dist/shared/lib/bloom-filter/utils";
 
 function ServicesList(){
 
     let services = []
     for (let i = 0; i < 4; i++){
         services.push({
+            id: randomInt(0,100),
             price: 200,
             title: "Graphic Design",
             location: "UCT Upper Campus",
@@ -15,7 +17,7 @@ function ServicesList(){
     }
 
     let servicesCards = services.map(function (service) {
-        return (<a href="#"><ServiceListCard service={service} /></a>)
+        return (<a href="#" key={service.id}><ServiceListCard service={service} /></a>)
     })
 
     return (
