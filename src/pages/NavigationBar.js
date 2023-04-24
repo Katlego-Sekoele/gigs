@@ -91,10 +91,10 @@ function NavigationBar(){
                             />
                         </Navbar.Item>
                     <Navbar.Item>
-                        <Link href='/Cart'><Button auto light><CartIcon></CartIcon></Button></Link>
+                        <a href='/Cart'><Button auto light><CartIcon></CartIcon></Button></a>
                     </Navbar.Item>
                     <Navbar.Item>
-                        <Link href='/Services'><Button auto >View Services</Button></Link>
+                        <a href='/Services'><Button auto >View Services</Button></a>
                     </Navbar.Item>
 
                 </Navbar.Content>
