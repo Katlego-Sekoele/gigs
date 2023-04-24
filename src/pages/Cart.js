@@ -1,10 +1,16 @@
-import React from "react";
-import {Input, useInput, Grid, Text, Dropdown, Button} from "@nextui-org/react";
+import React, {useEffect} from "react";
+import {Input, useInput, Grid, Text, Dropdown, Button, Card, Link, User, Badge} from "@nextui-org/react";
 import classes from "@/styles/Home.module.css"
+import {useState} from "react"
+import {useRouter} from "next/router";
+import {getServiceProviderFromService} from "@/pages/ServicesService";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import {router} from "next/router";
 
 
-function PersonalDetailsForm(){
-    const { value, reset, bindings } = useInput("");
+function PersonalDetailsForm({router, setCart}) {
+    const {value, reset, bindings} = useInput("");
 
     const validateEmail = (value) => {
         return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -29,6 +35,15 @@ function PersonalDetailsForm(){
         () => Array.from(selected).join(", ").replaceAll("_", " "),
         [selected]
     );
+
+    const notify = () => {
+        alert("Purchase Successful.");
+        setCart([])
+        if (typeof window !== 'undefined') {
+            localStorage.setItem("CART", JSON.stringify([]))
+        }
+        router.push('/')
+    }
 
 
     return (
@@ -73,7 +88,7 @@ function PersonalDetailsForm(){
                 <div className={classes.small_margin_bottom}>
                     <Text color={"primary"}>Please select a payment provider</Text>
                     <Dropdown>
-                        <Dropdown.Button bordered color="primary" css={{ tt: "capitalize" }}>
+                        <Dropdown.Button bordered color="primary" css={{tt: "capitalize"}}>
                             {selectedValue}
                         </Dropdown.Button>
                         <Dropdown.Menu
@@ -129,7 +144,7 @@ function PersonalDetailsForm(){
                 </div>
 
                 <div className={classes.confirmButton}>
-                    <Button color={"gradient"}>
+                    <Button color={"gradient"} onPress={notify}>
                         Confirm Purchase
                     </Button>
                 </div>
@@ -141,20 +156,107 @@ function PersonalDetailsForm(){
     )
 }
 
-function CartContent(){
+function CartContent({cart, setCart, router}) {
+
+
+
+    // When user submits the form, save the favorite number to the local storage
+    const saveToLocalStorage = e => {
+        setCart([])
+        if (typeof window !== 'undefined') {
+            localStorage.setItem("CART", JSON.stringify([]))
+        }
+        router.push('/')
+    }
+
+    function sumCart() {
+        let sum = 0;
+
+        for (let item of cart){
+            sum += item.Price
+        }
+
+        return sum
+    }
+
     return (
-        <>
-            <Text>{cart[0].Title}</Text>
-        </>
-    )
+        <div className={classes.cartMain}>
+            <div className={classes.formBorder}>
+                <Text h1>Invoiced Services</Text>
+                <div className={classes.sideBySideTotal}>
+                    <Text h3><i>Total</i> R {sumCart()}</Text>
+                    <Button color="error" auto onPress={saveToLocalStorage}>Clear Cart</Button>
+                </div>
+                <div className={classes.serviceCardsInvoiceCointainer}>
+                {(cart.map(function (cartItem) {
+                    let serviceProvider = getServiceProviderFromService(cartItem)
+                    return (
+                        <div className={classes.serviceCardsInvoiceCointainerChild}>
+                <Card className={classes.invoiceCard}>
+                <Card.Header>
+                    <Badge isSquared color="warning" content={`${serviceProvider.Rating} ✦`} placement="top-left">
+                        <User
+                            bordered
+                            src="https://imebehavioralhealth.com/wp-content/uploads/2021/10/user-icon-placeholder-1.png"
+                            name={`${serviceProvider.FirstName} ${serviceProvider.LastName}`}
+                            description={serviceProvider.Email}
+                        >
+                        </User>
+                    </Badge>
+                </Card.Header>
+                <Card.Body css={{py: "$2"}}>
+                    <Text h4>{cartItem.Title}</Text>
+                    <Text h5>
+                        R {cartItem.Price}
+                    </Text>
+                    <hr/>
+                    <Text>
+                        {cartItem.Description}
+                    </Text>
+                </Card.Body>
+                <Card.Footer>
+                    <Link
+                        icon
+                        color="primary"
+                        target="_blank"
+                        href={`mailto:${serviceProvider.Email}`}
+                    >
+                        Contact Me.
+                    </Link>
+                </Card.Footer>
+            </Card>
+                        </div>
+            )
+            }))}
+                </div>
+        </div>
+</div>
+
+)
 }
 
-function Cart(){
+function Cart() {
+
+    // Set the value received from the local storage to a local state
+    const [cart, setCart] = useState([])
+    const router = useRouter()
+
+    useEffect(() => {
+        let value
+        // Get the value from local storage if it exists
+
+        if (typeof window !== 'undefined') {
+            value = JSON.parse(localStorage.getItem("CART") || JSON.stringify([]))
+        }else{
+            value = []
+        }
+        setCart(value)
+    }, [])
 
     return (
         <>
-            <CartContent/>
-            <PersonalDetailsForm/>
+            <CartContent cart={cart} setCart={setCart} router={router}/>
+            <PersonalDetailsForm router={router} setCart={setCart}/>
         </>
     )
 }

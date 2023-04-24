@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import { createTheme, NextUIProvider, Text } from "@nextui-org/react"
 import NavigationBar from "@/pages/NavigationBar";
+import {useEffect} from "react";
 
 const dark = createTheme({
     type: 'dark',
@@ -21,6 +22,7 @@ const light = createTheme({
 })
 
 export default function App({ Component, pageProps }) {
+
     return (
             <NextUIProvider theme={light}>
                 <NavigationBar />

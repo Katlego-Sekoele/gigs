@@ -14,7 +14,7 @@ function Hero() {
                 <Text h1 className={`${classes.heroText}`}>
                     Work Smarter, Not Harder.
                 </Text>
-                <Text p className={`${classes.paddingBottom} ${classes.heroText}`}>
+                <Text className={`${classes.paddingBottom} ${classes.heroText}`}>
                     {heroText}
                 </Text>
                 <div className={classes.inline}>
