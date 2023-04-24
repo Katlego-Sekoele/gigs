@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { createTheme, NextUIProvider, Text } from "@nextui-org/react"
-import NavigationBar from "@/pages/NavigationBar";
+import NavigationBar from "@/NavigationBar";
 import {useEffect} from "react";
 
 const dark = createTheme({

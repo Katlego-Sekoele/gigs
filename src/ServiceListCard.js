@@ -3,6 +3,7 @@ import {Text} from "@nextui-org/react";
 import {Image} from "@nextui-org/react";
 
 function ServiceListCard({service}) {
+
     return (
         <div className={`${classes.newline} ${classes.padded}`}>
             <div className={classes.containerImage}>

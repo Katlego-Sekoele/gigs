@@ -1,8 +1,8 @@
 import classes from '@/styles/Home.module.css'
 import {Button, Input, Navbar, Text, Image, Link} from "@nextui-org/react";
-import {SearchButton} from "@/pages/SearchButton";
-import {SearchIcon} from "@/pages/SearchIcon";
-import { getServices } from "@/pages/ServicesService";
+import {SearchButton} from "@/SearchButton";
+import {SearchIcon} from "@/SearchIcon";
+import { getServices } from "@/ServicesService";
 import Services from "@/pages/Services";
 
 function Hero() {
@@ -42,7 +42,7 @@ function Hero() {
                         placeholder="Search for service"
                     />
                     <Link href='/Services'><Button auto className={classes.inlineChild}
-                            css={{
+                                                         css={{
                                 w: "auto",
                                 mb: "1em",
                                 "@xsMax": {

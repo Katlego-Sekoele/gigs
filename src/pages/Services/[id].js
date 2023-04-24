@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import {getServices, getAllServiceIds, getServiceById, getServiceProviderFromService} from "@/pages/ServicesService";
+import {getServices, getAllServiceIds, getServiceById, getServiceProviderFromService} from "@/ServicesService";
 import {Button, Image, Text, User, Progress, Badge, Grid} from "@nextui-org/react";
 import classes from "@/styles/Home.module.css"
 import {log} from "next/dist/server/typescript/utils";

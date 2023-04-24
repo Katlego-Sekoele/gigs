@@ -1,8 +1,8 @@
 import classes from "@/styles/Home.module.css"
 import {Link, Text} from "@nextui-org/react";
-import ServiceListCard from "@/pages/ServiceListCard";
+import ServiceListCard from "@/ServiceListCard";
 import {randomInt} from "next/dist/shared/lib/bloom-filter/utils";
-import {getServices} from "@/pages/ServicesService";
+import {getServices} from "@/ServicesService";
 
 function ServicesList({services, limit} ){
 

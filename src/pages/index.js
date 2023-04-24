@@ -1,10 +1,10 @@
 import classes from '@/styles/Home.module.css'
 import { Text } from "@nextui-org/react";
 import React from "react";
-import Hero from "@/pages/Hero";
-import ServiceProviderIconRow from "@/pages/ServiceProviderIconRow";
-import ServicesList from "@/pages/ServicesList";
-import {getServices} from "@/pages/ServicesService";
+import Hero from "@/Hero";
+import ServiceProviderIconRow from "@/ServiceProviderIconRow";
+import ServicesList from "@/ServicesList";
+import {getServices} from "@/ServicesService";
 
 export const getStaticProps = async () => {
     const services = await getServices()

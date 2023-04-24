@@ -1,7 +1,7 @@
 import {Button, Input, Link, Navbar, Text} from "@nextui-org/react";
 import classes from "@/styles/Home.module.css";
-import {SearchButton} from "@/pages/SearchButton";
-import {SearchIcon} from "@/pages/SearchIcon";
+import {SearchButton} from "@/SearchButton";
+import {SearchIcon} from "@/SearchIcon";
 
 
 export const CartIcon = ({

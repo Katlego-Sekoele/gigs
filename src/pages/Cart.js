@@ -3,7 +3,7 @@ import {Input, useInput, Grid, Text, Dropdown, Button, Card, Link, User, Badge} 
 import classes from "@/styles/Home.module.css"
 import {useState} from "react"
 import {useRouter} from "next/router";
-import {getServiceProviderFromService} from "@/pages/ServicesService";
+import {getServiceProviderFromService} from "@/ServicesService";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import {router} from "next/router";

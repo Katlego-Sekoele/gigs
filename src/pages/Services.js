@@ -1,6 +1,6 @@
 import classes from "@/styles/Home.module.css"
-import ServicesList from "@/pages/ServicesList";
-import {getServices} from "@/pages/ServicesService";
+import ServicesList from "@/ServicesList";
+import {getServices} from "@/ServicesService";
 
 
 export const getStaticProps = async () => {
