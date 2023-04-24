@@ -58,7 +58,7 @@ const ServicePage = ({ service }) => {
     return (
         <main className={classes.main}>
             <div className={classes.left}>
-                <Image src={service.Image} className={classes.product_image}/>
+                <Image src={service.Image} alt={service.Title} className={classes.product_image}/>
             </div>
             <div className={classes.right}>
                 <Text h3 className={`${classes.bold} ${classes.small_margin_bottom}`}>{service.Title}</Text>
