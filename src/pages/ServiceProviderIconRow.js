@@ -10,6 +10,7 @@ function ServiceProviderIconRow(){
 
     const profiles = src.map(function(profile) {
         return <User
+            key={`${Math.random()}`}
             src={profile}
             name=""
             size="xl"

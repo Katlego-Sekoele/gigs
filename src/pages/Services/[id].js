@@ -80,7 +80,7 @@ const ServicePage = ({ service }) => {
                     </User>
                 </Badge>
                 <Grid.Container gap={0.5} className={classes.grid}>
-                    {serviceProvider.Skills.map(skill => (<Grid><Badge color="secondary" variant="flat">{skill}</Badge></Grid>))}
+                    {serviceProvider.Skills.map(skill => (<Grid key={skill}><Badge color="secondary" variant="flat">{skill}</Badge></Grid>))}
                 </Grid.Container>
             </div>
         </main>

@@ -191,7 +191,7 @@ function CartContent({cart, setCart, router}) {
                 {(cart.map(function (cartItem) {
                     let serviceProvider = getServiceProviderFromService(cartItem)
                     return (
-                        <div className={classes.serviceCardsInvoiceCointainerChild}>
+                        <div key={cartItem.Description} className={classes.serviceCardsInvoiceCointainerChild}>
                 <Card className={classes.invoiceCard}>
                 <Card.Header>
                     <Badge isSquared color="warning" content={`${serviceProvider.Rating} ✦`} placement="top-left">
