@@ -3,6 +3,7 @@ import {getServices, getAllServiceIds, getServiceById, getServiceProviderFromSer
 import {Button, Image, Text, User, Progress, Badge, Grid} from "@nextui-org/react";
 import React from "react";
 import classes from "@/styles/Home.module.css"
+import {log} from "next/dist/server/typescript/utils";
 
 
 export async function getStaticPaths() {
@@ -33,6 +34,8 @@ const ServicePage = ({ service }) => {
         Skills
      */
 
+
+
     return (
         <main className={classes.main}>
             <div className={classes.left}>
@@ -44,7 +47,7 @@ const ServicePage = ({ service }) => {
                 <Progress className={classes.margin_bottom} size="xs" value={100} color="gradient" status="primary"/>
                 <Text p className={classes.padded}>{service.Description}</Text>
                 <div className={classes.buy_btn}>
-                    <Button auto shadow color="gradient">Add to Invoice</Button>
+                    <Button auto shadow color="gradient" onPress={() => console.log('added to invoice')}>Add to Invoice</Button>
                 </div>
             </div>
             <div className={classes.profile_section}>

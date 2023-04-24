@@ -22,10 +22,10 @@ const light = createTheme({
 
 export default function App({ Component, pageProps }) {
     return (
-        <NextUIProvider theme={light}>
-            <NavigationBar />
-            <Component {...pageProps} />
-        </NextUIProvider>
+            <NextUIProvider theme={light}>
+                <NavigationBar />
+                <Component {...pageProps} />
+            </NextUIProvider>
     )
 }
 
