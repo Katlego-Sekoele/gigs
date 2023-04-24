@@ -41,7 +41,7 @@ function Hero() {
                         }}
                         placeholder="Search for service"
                     />
-                    <a href='/Services'><Button auto className={classes.inlineChild}
+                    <Link href='/Services'><Button auto className={classes.inlineChild}
                             css={{
                                 w: "auto",
                                 mb: "1em",
@@ -49,7 +49,7 @@ function Hero() {
                                     mw: "300px",
                                 },
                             }}
-                    > View Services</Button></a>
+                    > View Services</Button></Link>
                 </div>
             </div>
             <div className={classes.heroRight}>
