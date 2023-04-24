@@ -67,3 +67,5 @@ export async function getServiceById(id){
 export function getServiceProviderFromService(service){
     return service.service_provider.data.attributes
 }
+
+export default () => {}

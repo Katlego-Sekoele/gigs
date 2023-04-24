@@ -11,3 +11,5 @@ export const SearchIcon = ({size, fill, width = 24, height = 24, ...props}) => {
         </svg>
     );
 };
+
+export default SearchIcon

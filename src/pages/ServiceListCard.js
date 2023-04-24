@@ -12,7 +12,7 @@ function ServiceListCard({service}) {
                 <Text b className={classes.price}>R {service.Price}</Text>
             </div>
             <Text b className={classes.Title}>{service.Title}</Text>
-            <Text><Image alt="location icon" width='16' src="https://www.svgrepo.com/show/127575/location-sign.svg"/> {service.Location}</Text>
+            <Text>{service.Location}</Text>
         </div>
     )
 }

@@ -28,3 +28,5 @@ export const SearchButton = styled('button', {
         transform: 'scale(0.9)'
     }
 });
+
+export default SearchButton
