@@ -1,4 +1,4 @@
-import {Button, Input, Navbar, Text} from "@nextui-org/react";
+import {Button, Input, Link, Navbar, Text} from "@nextui-org/react";
 import classes from "@/styles/Home.module.css";
 import {SearchButton} from "@/pages/SearchButton";
 import {SearchIcon} from "@/pages/SearchIcon";
@@ -8,9 +8,12 @@ function NavigationBar(){
         <>
             <Navbar isBordered variant="sticky">
                 <Navbar.Brand css={{ mr: "$4" }}>
-                    <Text className={classes.navbarLogo} b textweight="extrabold">
-                        gigs
-                    </Text>
+                    <Link href='/'>
+                        <Text className={classes.navbarLogo} b textweight="extrabold">
+                            gigs
+                        </Text>
+                    </Link>
+
                 </Navbar.Brand>
                 <Navbar.Content
                                 css={{
@@ -28,6 +31,7 @@ function NavigationBar(){
                             }}
                         >
                             <Input
+                                className={classes.searchBar}
                                 clearable
                                 bordered
                                 contentLeft={
@@ -49,7 +53,7 @@ function NavigationBar(){
                             />
                         </Navbar.Item>
                     <Navbar.Item>
-                        <Button auto>Profile</Button>
+                        <a href='/Services'><Button auto >View Services</Button></a>
                     </Navbar.Item>
                 </Navbar.Content>
 

@@ -1,7 +1,9 @@
 import classes from '@/styles/Home.module.css'
-import {Button, Input, Navbar, Text, Image} from "@nextui-org/react";
+import {Button, Input, Navbar, Text, Image, Link} from "@nextui-org/react";
 import {SearchButton} from "@/pages/SearchButton";
 import {SearchIcon} from "@/pages/SearchIcon";
+import { getServices } from "@/pages/ServicesService";
+import Services from "@/pages/Services";
 
 function Hero() {
     const heroText = "Welcome to our student freelancing platform! We’re here to help you find work that fits your schedule and skills. Whether you’re looking for a side hustle or a full-time gig, we’ve got you covered. Our platform connects you with clients who are looking for talented students just like you. With our easy-to-use interface and powerful tools, you can find work that matches your interests and expertise. So why wait? Sign up today and start earning money doing what you love!"
@@ -17,6 +19,7 @@ function Hero() {
                 </Text>
                 <div className={classes.inline}>
                     <Input
+                        className={classes.searchBar}
                         clearable
                         bordered
                         contentLeft={
@@ -38,7 +41,7 @@ function Hero() {
                         }}
                         placeholder="Search for service"
                     />
-                    <Button auto className={classes.inlineChild}
+                    <a href='/Services'><Button auto className={classes.inlineChild}
                             css={{
                                 w: "auto",
                                 mb: "1em",
@@ -46,7 +49,7 @@ function Hero() {
                                     mw: "300px",
                                 },
                             }}
-                    >Post Service</Button>
+                    > View Services</Button></a>
                 </div>
             </div>
             <div className={classes.heroRight}>
