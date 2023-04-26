@@ -1,5 +1,3 @@
-Here's a sample README file for a Next.js project that provides a platform for students to buy and sell services from each other:
-
 # Student Services Marketplace
 
 This is a web application built with Next.js that provides a platform for students to buy and sell services from each other. The website is largely unfinished and was just used as a playground to test and learn React.js and Next.js.
