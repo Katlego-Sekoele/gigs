@@ -1,6 +1,6 @@
 # Student Services Marketplace
 
-This is a web application built with Next.js that provides a platform for students to buy and sell services from each other. The website is largely unfinished and was just used as a playground to test and learn React.js and Next.js. The website is publicly hosted on this link https://gigs-silk.vercel.app/.
+This is a web application built with Next.js that provides a platform for students to buy and sell services from each other. The website is largely unfinished and was just used as a playground to test and learn React.js and Next.js. The website is publicly hosted on this [link](https://gigs-silk.vercel.app/).
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
